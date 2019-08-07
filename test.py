@@ -1,3 +1,6 @@
+# You should install gensim before you run this script
+# pip install gensim 
+
 from gensim.models import KeyedVectors
 
 model = KeyedVectors.load_word2vec_format('word2vec.model', binary=False)
