@@ -42,7 +42,11 @@ python create_tokenized_data.py
 
 3. 分かち書き済みのデータ`tokenized_data.txt`を自分のGoogle Driveにアップロードする
 4. Google Colabを開いて、ローカルの`jp_word2vec.ipynb`を開く。
+5. Google Driveに保存された`word2vec.model`をローカルにダウンロードして、類似語の計算などを行う前、先に`gensim`を入れる必要がある。
 
+```
+pip install gensim
+```
 ### Google Colabを使用する際の注意点
 
 1. `ランタイム/ランタイムの変更`でGPUの使用を確保する
