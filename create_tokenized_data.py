@@ -6,8 +6,7 @@ import unicodedata
 import MeCab
 
 
-
-
+# テキスト読み込むのイテレータ
 class Readtext:
     def __init__(self, path):
         self.path = path
@@ -20,7 +19,8 @@ class Readtext:
         except:
             raise
 
-
+# 分かち書きして保存するクラス
+# Macでneologdをインストールした場合は新語の解析も可能、なくても大丈夫
 class Wakati:
     def __init__(self,
                 file_path,
@@ -66,6 +66,7 @@ class Wakati:
             for line in self.splited_text:
                 f.write(' '.join(line))
 
+# 分かち書きを行うメイン関数
 def wakati(file_path, out_path=None):
     print('wakati {} start!!'.format(file_path), end=' --> ')
     Wakati(file_path, out_path).output()
@@ -74,11 +75,12 @@ def wakati(file_path, out_path=None):
 
 
 
-
+# 全サンプルデータからランダムに50個を選ぶ
+# 乱数シードの設定や選ぶ文書の数は自由に決めてもいい
 path = glob.glob('sample_text/*/*')
 sample = random.sample(path, 50)
 
-
+# 選んだ文書それぞれに対して、分かち書きして、結果を保存する
 out_dir = 'tokenized_text'
 if not os.path.exists(out_dir):
     os.mkdir(out_dir)
@@ -89,6 +91,7 @@ for index, file in enumerate(sample, 1):
         wakati(file, out_dir+'/'+''.join(file.rsplit('/',2)[-2:])+'.txt')
 
 
+# 分かち書きの結果をまとめて、tokenized_data.txtに保存する
 tokenized_text = glob.glob(f'{out_dir}/*')
 data = ''
 for i in tokenized_text:
