@@ -27,11 +27,12 @@ repoの構成は以下のようである。
 ## Google Colabの使い方
 Google ColabはGPU付きのネット上の計算環境であり、Googleアカウントを持っていれば、誰でも無料で使える
 
-1. Google ColabのJP公式イントロページへアクセスする
+1. Google ColabのJP公式イントロページへアクセスして、簡単な説明を読む
 https://colab.research.google.com/notebooks/welcome.ipynb?hl=ja
 
 2. `ファイル/ノートブックをアップロード`で、ローカルにダウンロードして本repoの`jp_word2vec.ipynb`を開く
 あるいは、github上で、`jp_word2vec.ipynb`をクリックして、`Open in Colab`というアイコンをクリックする
+
 
 ## Usage
 
@@ -49,7 +50,7 @@ python create_tokenized_data.py
 ```
 
 3. 分かち書き済みのデータ`tokenized_data.txt`を自分のGoogle Driveにアップロードする
-4. Google Colabを開いて、ローカルの`jp_word2vec.ipynb`を開く。
+4. Google Colabを開いて、`jp_word2vec.ipynb`を開く。
 5. Google Driveに保存された`word2vec.model`をローカルにダウンロードして、類似語の計算などを行う前、先に`gensim`を入れる必要がある。
 
 ```
