@@ -24,6 +24,14 @@ repoの構成は以下のようである。
 - Google アカウント
 
 
+## Google Colabの使い方
+Google ColabはGPU付きのネット上の計算環境であり、Googleアカウントを持っていれば、誰でも無料で使える
+
+1. Google ColabのJP公式イントロページへアクセスする
+https://colab.research.google.com/notebooks/welcome.ipynb?hl=ja
+
+2. `ファイル/ノートブックをアップロード`で、ローカルにダウンロードして本repoの`jp_word2vec.ipynb`を開く
+あるいは、github上で、`jp_word2vec.ipynb`をクリックして、`Open in Colab`というアイコンをクリックする
 
 ## Usage
 
