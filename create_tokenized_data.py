@@ -62,7 +62,7 @@ class Wakati:
         if self.out_path == None:
             filename, _ = os.path.splitext(self.file_path)
             self.out_path = filename + '_wakati.txt'
-        with open(self.out_path, 'w') as f:
+        with open(self.out_path, 'w', encoding='utf-8') as f:
             for line in self.splited_text:
                 f.write(' '.join(line))
 
@@ -71,9 +71,6 @@ def wakati(file_path, out_path=None):
     print('wakati {} start!!'.format(file_path), end=' --> ')
     Wakati(file_path, out_path).output()
     print('finished!!')
-
-
-
 
 # 全サンプルデータからランダムに50個を選ぶ
 # 乱数シードの設定や選ぶ文書の数は自由に決めてもいい
@@ -88,16 +85,16 @@ if not os.path.exists(out_dir):
 for index, file in enumerate(sample, 1):
     print(f'{index}/total:{len(sample)}')
     with open(file) as f:
-        wakati(file, out_dir+'/'+''.join(file.rsplit('/',2)[-2:])+'.txt')
+        wakati(file, out_dir+os.sep+''.join(file.rsplit(os.sep,2)[-2:])+'.txt')
 
 
 # 分かち書きの結果をまとめて、tokenized_data.txtに保存する
 tokenized_text = glob.glob(f'{out_dir}/*')
 data = ''
 for i in tokenized_text:
-    with open(i) as f:
+    with open(i, encoding='utf-8') as f:
         data += f.read()
 
-with open('tokenized_data.txt', 'w') as f:
+with open('tokenized_data.txt', 'w', encoding='utf-8') as f:
     f.write(data)
 print(f'tokenized data saved!')
