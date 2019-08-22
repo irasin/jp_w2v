@@ -13,7 +13,7 @@ class Readtext:
 
     def __iter__(self):
         try:
-            with open(self.path) as f:
+            with open(self.path, encoding='utf-8') as f:
                 for line in f:
                     yield line
         except:
