@@ -33,9 +33,9 @@ class Wakati:
         self.patterns = patterns
         self.splited_text = []
         try:
-            self.tagger = MeCab.Tagger('Owakati -d {}'.format(dic_path))
+            self.tagger = MeCab.Tagger('-Owakati -d {}'.format(dic_path))
         except:
-            self.tagger = MeCab.Tagger('Owakati')
+            self.tagger = MeCab.Tagger('-Owakati')
 
     def wakati(self):
         # split the text
