@@ -20,7 +20,6 @@ class Readtext:
             raise
 
 # 分かち書きして保存するクラス
-# Macでneologdをインストールした場合は新語の解析も可能、なくても大丈夫
 class Wakati:
     def __init__(self,
                 file_path,
@@ -32,10 +31,7 @@ class Wakati:
         self.out_path = out_path
         self.patterns = patterns
         self.splited_text = []
-        try:
-            self.tagger = MeCab.Tagger('-Owakati -d {}'.format(dic_path))
-        except:
-            self.tagger = MeCab.Tagger('-Owakati')
+        self.tagger = MeCab.Tagger('-Owakati')
 
     def wakati(self):
         # split the text
