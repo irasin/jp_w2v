@@ -24,7 +24,6 @@ class Wakati:
     def __init__(self,
                 file_path,
                 out_path=None,
-                dic_path='/usr/local/lib/mecab/dic/mecab-ipadic-neologd',
                 patterns=[r'<.*>']):
 
         self.file_path = file_path
