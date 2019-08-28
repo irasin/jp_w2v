@@ -13,6 +13,8 @@ repoの構成は以下のようである。
 │
 ├ jp_word2vec.ipynb ..Google Colabでword2vecの学習を行う
 │
+├ train_word2vec.py ..ローカルで学習するスクリプト
+│
 ├ test.py ..Google Colabで学習済みのWord2vecモデルをローカルでテストする
 
 ```
