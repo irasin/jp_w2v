@@ -184,7 +184,7 @@ def main():
     device.use()
 
 
-    with open('tokenized_data.txt', 'r') as f:
+    with open('tokenized_data.txt', 'r', encoding='utf-8') as f:
         data = f.read().split()
 
     import collections
@@ -273,7 +273,7 @@ def main():
     trainer.run()
 
     # Save the word2vec model
-    with open('word2vec.model', 'w') as f:
+    with open('word2vec.model', 'w', encoding='utf-8') as f:
         f.write('%d %d\n' % (len(index2word), args.unit))
         w = cuda.to_cpu(model.embed.W.array)
         for i, wi in enumerate(w):
